@@ -1,0 +1,26 @@
+image:
+  repository: shreyasr03/custom-mongo
+  tag: v1
+
+securityContext:
+  runAsUser: 1001
+  runAsGroup: 1001
+
+resources:
+  limits:
+    memory: 512Mi
+    cpu: 500m
+
+serviceAccount:
+  name: mongo-sa
+  create: true
+
+rbac:
+  create: true
+  roleName: mongo-role
+  roleBindingName: mongo-binding
+
+persistence:
+  enabled: true
+  claimName: mongo-pvc
+

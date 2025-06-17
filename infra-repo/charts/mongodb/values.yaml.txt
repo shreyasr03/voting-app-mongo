@@ -1,0 +1,10 @@
+image:
+  repository: shreyasr03/custom-mongo
+  tag: v1
+securityContext:
+  runAsUser: 1001
+  runAsGroup: 1001
+resources:
+  limits:
+    memory: 512Mi
+    cpu: 500m
